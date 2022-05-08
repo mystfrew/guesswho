@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+Вход для пользователя
+{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p> {{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<h1>Введите свои данные</h1>
+    <form method="post">
+    <p><label>Логин:</label><input type="text" name="u_name" id="u_name"><br>
+    <p><label>Пароль:</label><input type="password" name="password" id="password"><br>
+    <button type="submit" class="button8">Отправить</button>
+
+</form>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}
+Решаю ЕГЭ
+{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p> {{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="container mt-3">
+    <div class="row">
+    <div class="col-8">
+  <h1>  Личный кабинет </h1>
+
+<table class="table">
+    <thead>
+      <tr colspan="2">
+          <td><h2>Ваши данные:</h2></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>Логин</td>
+        <td><p>{{user.u_name}}</td>
+
+      </tr>
+      <tr class="table-info">
+        <td><p>Пароль</td>
+        <td><p>{{user.password}}</td>
+        <td></td>
+
+      </tr>
+      <tr>
+         <td><p>Имя</td>
+        <td><p>{{user.name}}</td>
+        <td></td>
+
+      </tr>
+      <tr class="table-info">
+        <td><p>Фамилия</td>
+       <td><p>{{user.surname}}</td>
+       <td></td>
+
+     </tr>
+     <tr>
+        <td><p>Email</td>
+       <td><p>{{user.email}}</td>
+       <td></td>
+
+     </tr>
+     <tr class="table-info">
+        <td><p>Набранные баллы</td>
+       <td><p>{{user.points}}</td>
+       <td></td>
+
+     </tr>
+    </tbody>
+  </table>
+  <a href='/add-user/{{user._id}}/update'><button type="button" class="button8">Изменить</button></a>
+</div>
+
+</div>
+</div>
+
+{% endblock %}

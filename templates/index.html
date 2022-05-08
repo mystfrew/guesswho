@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p> <progress value="1" max="10" ></progress>
+<h1>QST 1</h1>
+<h2>В каком году был рожден знаменитый музыкант Playboi Carti?</h2>
+<form method="post">
+    <textarea cols="40" rows="10" style="resize:none;" name=prog id=prog></textarea>
+    <p><button type="submit" class="button8">Тест</button>
+</form>
+<p><textarea cols="40" rows="5" style="resize:none;">{{rez}}</textarea>
+{%if rez == 1985%}
+<p>Все отлично</p>
+{% elif rez == ''%}
+{% else %}
+<p> bih </p>
+{% endif %}
+{%if not u_name %}
+<p>Надо зарегистрироваться на сайте
+{%endif %} 
+<p>{%if u_name and flag%}<a href="/page2"   class="button8">Дальше</a>{%endif %}
+
+{% endblock content %}
+</body>

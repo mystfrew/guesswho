@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p> <progress value="10" max="10" ></progress>
+<h1>FINAL FLAMESSSS</h1>
+<h2>Давай смотреть результаты!!</h2>
+<p>Поздравляю! Ты прошел викторину на эрудицую в сфере рэп-културы
+<p>Если ты набрал больше 7/9, то ты подкован в этой теме. Если больше 5/9,
+<p>то ты имеешь неплохие познания. Если больше 3/9, то ты бодрый начинающий!
+<p>А пока оставь отзыв о викторине в блоке ниже!
+<form method="post">
+    <textarea cols="50" rows="12" style="resize:none;" name=feedback >{%if feedback %}{{feedback}}{% endif%}</textarea>
+    {%if rez%}
+<p>{{rez}}</p>
+{% else %}
+<p> Оставьте отзыв, пожалуйста! </p>
+{% endif %}
+    <p><button type="submit" class="button8">Отправить</button>
+</form>
+{% endblock content %}
+
+</body>

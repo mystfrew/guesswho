@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+Изменение данных
+{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p> {{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<br><h1>Обновите данные:</h1>
+    <form method="post">
+    <p><label>Логин:</label><input type="text" name="u_name" id="u_name" value="{{user.u_name}}"><br>
+    <p><label>Пароль:</label><input type="password" name="password" id="password" value="{{user.password}}"><br>
+    <p><label>Имя:</label><input type="text" name="name" id="name" value="{{user.name}}"><br>
+    <p><label>Фамилия:</label><input type="text" name="surname" id="surname" value="{{user.surname}}"><br>
+    <p><label>email:</label><input type="text" name="email" id="email" value="{{user.email}}"><br>
+
+    <button type="submit" class="button8"> Сохранить </button>
+
+</form>
+{% endblock %}

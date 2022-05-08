@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p> <progress value="9" max="10" ></progress>
+<h1>QST 9</h1>
+<h2>Кто является единственным белым рэпером, признанным "черным"?</h2>
+<form method="post">
+    <textarea cols="40" rows="10" style="resize:none;" name=prog id="prog">{%if prog %}{{prog}}{% else %}{% endif%}</textarea>
+    <p><button type="submit" class="button8">Тест</button>
+</form>
+<p><textarea cols="40" rows="5" style="resize:none;">{{ans}}</textarea>
+{%if rez%}
+<p>{{rez}}</p>
+{% else %}
+<p> </p>
+{% endif %}
+<p>{%if u_name and flag%}<a href="/page10" class="button8">Дальше</a>{%endif%}
+
+{% endblock content %}
+</body>

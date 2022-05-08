@@ -1,0 +1,22 @@
+<head>
+<title>
+guess whо?.
+</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+<body>
+<a href="/" class="button8">Главная</a>
+{% if not u_name%}
+<a href='/add-user' class="button8">Регистрация</a>
+<a href='/login' class="button8">Войти </a>
+
+{% else %}
+<a href = '/account'><img width="30" src="{{url_for('static', filename='img/user.png')}}"></a>
+<a href='/logout'><button class="button8">Выйти</button></a>
+
+{% endif %}
+<a href="/feedback" class="button8">Отзывы</a>
+{% block content %}
+{% endblock content %}
+
+</body>
